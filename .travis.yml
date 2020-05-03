@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t scottwl/docker-react -f Dockerfire.dev .
+
+script:
+  - docker run -e CI=true scottwl/docker-react npm run test
