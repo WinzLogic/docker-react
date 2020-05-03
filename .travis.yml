@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t scottwl/docker-react -f Dockerfire.dev .
+  - docker build -t scottwl/docker-react -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true scottwl/docker-react npm run test
